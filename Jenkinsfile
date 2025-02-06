@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/Pmthk1/66022635-Nextjs/tree/v1.0.0'
+                git branch: 'main', url: 'https://github.com/Pmthk1/66022635-Nextjs.git'
             }
         }
         stage('Build') {
@@ -15,7 +15,7 @@ pipeline {
         stage('Docker Build & Run') {
             steps {
                 sh 'docker build -t nextjs-app .'
-                sh 'docker run -d -p 3000:3000 nextjs-app'
+                sh 'docker run -d -p 20000:20000 nextjs-app'
             }
         }
     }
